@@ -83,29 +83,72 @@ footer { margin-top:30px; padding-top:14px; border-top:1px solid var(--ash); fon
 <header>
   <h1 class="title">HELIOS<b>-741</b></h1>
   <p class="tagline">installer, updater and library setup for the 741 tools. macos.</p>
-  <nav class="nav"><a href="#download">download</a><a href="guide/">setup guide</a><a href="#what">what it does</a><a href="#help">help</a></nav>
+  <nav class="nav"><a href="#download">download</a><a href="#why">why</a><a href="#install">install</a><a href="#collection">collection</a><a href="#apps">apps</a><a href="#repair">repair</a><a href="guide/">full guide</a></nav>
 </header>
 
 <section id="download">
-  <h2><i>◆</i> DOWNLOAD</h2>
-  <p>start here. HELIOS is the software center of 741: install it once, it sets up your library and installs and updates the rest.</p>
+  <h2><i>◆</i> START HERE</h2>
+  <p>HELIOS is the software center of 741. install it once: it sets up your library, brings in your existing collection, and installs and updates MINOS, STYX and ORPHEUS.</p>
   <p><a class="btn" href="https://github.com/Slayer7411/HELIOS-741-releases/releases/download/latest-build/HELIOS-741.dmg">download HELIOS-741.dmg</a></p>
-  <p class="meta">needs macos 15+. <a href="https://github.com/Slayer7411/HELIOS-741-releases/releases">all releases</a></p>
-  <h3>first start</h3>
-  <p>if macos blocks the first start: system settings -&gt; privacy &amp; security -&gt; OPEN ANYWAY.</p>
-  <p class="meta">step by step -&gt; <a href="guide/">setup guide</a></p>
+  <p class="meta">needs macos 15+. free, no account. <a href="https://github.com/Slayer7411/HELIOS-741-releases/releases">all releases</a></p>
 </section>
 
-<section id="what">
-  <h2><i>◆</i> WHAT IT DOES</h2>
+<section id="why">
+  <h2><i>◆</i> WHY INSTALL THROUGH HELIOS</h2>
   <ul>
-    <li><b>setup</b>: picks a home for your library (google drive folder or local), creates a new library or adopts an existing one</li>
-    <li><b>import</b>: reads your existing .nml or .xml collection once, shows a plan first, writes nothing until you confirm</li>
-    <li><b>apps</b>: installs, updates and rolls back MINOS, STYX and ORPHEUS. one update channel per app</li>
-    <li><b>library</b>: move, adopt, import, reset, or run the setup again</li>
-    <li><b>repair</b>: checks your tracks, finds moved or broken files and relinks them</li>
+    <li><b>one library for all apps.</b> MINOS, STYX and ORPHEUS share one collection file. HELIOS creates it and connects every app to it, so a cue you set in one app is there in the next</li>
+    <li><b>your collection comes with you.</b> HELIOS imports your existing .nml or .xml collection: tracks, cues, grids, playlists. you don't start from zero</li>
+    <li><b>backups from day one.</b> hourly, weekly, monthly, yearly. set up for you, nothing to configure</li>
+    <li><b>updates without thinking.</b> every app stays current, the download is checked before install, the last 3 versions are kept for rollback</li>
+    <li><b>files stay found.</b> if you move or rename music folders, REPAIR finds the files again and relinks them</li>
   </ul>
-  <p class="meta">every app also runs on its own, without HELIOS.</p>
+  <p class="meta">every app also runs on its own. without HELIOS you install, update and back up each one by hand.</p>
+</section>
+
+<section id="install">
+  <h2><i>◆</i> INSTALL IN 5 STEPS</h2>
+  <div class="step"><b>01</b><div><p>download <a href="https://github.com/Slayer7411/HELIOS-741-releases/releases/download/latest-build/HELIOS-741.dmg">HELIOS-741.dmg</a>, open it, drag HELIOS into Applications.</p></div></div>
+  <div class="step"><b>02</b><div><p>start HELIOS. if macos blocks it: system settings -&gt; privacy &amp; security -&gt; OPEN ANYWAY.</p></div></div>
+  <div class="step"><b>03</b><div><p><b>choose a home</b> for your library: a google drive folder (default <code>My Drive/741</code>, same library on every mac) or a local folder. already set up on another mac? pick that home and HELIOS adopts it.</p></div></div>
+  <div class="step"><b>04</b><div><p><b>bring in your collection</b>: pick your .nml or .xml file. HELIOS shows a plan first, then writes the library once you confirm. details below.</p></div></div>
+  <div class="step"><b>05</b><div><p><b>pick your apps</b>: MINOS, and optionally STYX and ORPHEUS. HELIOS installs them. open MINOS, your tracks are already there.</p></div></div>
+</section>
+
+<section id="collection">
+  <h2><i>◆</i> YOUR COLLECTION</h2>
+  <h3>one file: collection.741</h3>
+  <p>tracks, cues, grids, tags, playlists, sets and app settings live in one file in your home folder. all 741 apps read and write it. only a small background service writes to it, so two apps never overwrite each other.</p>
+  <h3>import from your current software</h3>
+  <ul>
+    <li>reads an .nml or .xml collection once. your original file is never changed</li>
+    <li>a plan comes first: number of tracks and playlists, missing files, duplicates, warnings. the plan writes nothing</li>
+    <li>after you confirm, HELIOS writes the library and reads it back to check it. optional: a copy of the source is kept under <code>imports/&lt;date&gt;/</code></li>
+  </ul>
+  <h3>your music files</h3>
+  <ul>
+    <li><b>adopt</b>: music stays where it is, the library points at it</li>
+    <li><b>move</b>: HELIOS moves it into one library folder. the old files are only removed after the copy is verified</li>
+  </ul>
+  <h3>nothing gets locked in</h3>
+  <p>when you close, the library is exported back to .nml and .xml under <code>exports/</code>, so your other software keeps working with the same cues and playlists.</p>
+  <h3>backups</h3>
+  <p>automatic under <code>backups/</code>: hourly, weekly, monthly, yearly.</p>
+</section>
+
+<section id="apps">
+  <h2><i>◆</i> APPS AND UPDATES</h2>
+  <ul>
+    <li>MINOS · dj software. STYX · digging. ORPHEUS · player for listening</li>
+    <li>channel per app: <b>newest build</b> (default), <b>stable versions</b>, own folder, or off</li>
+    <li>no update while you play: HELIOS asks you to quit, or installs on the next quit</li>
+    <li>HELIOS updates itself the same way</li>
+  </ul>
+</section>
+
+<section id="repair">
+  <h2><i>◆</i> REPAIR</h2>
+  <p>checks every track: does the file exist, does it play. moved files are found again and relinked, cues and grids stay. runs in the background too, never while you play.</p>
+  <p class="meta">later changes in LIBRARY: move, adopt, import, reset, run setup again. everything step by step -&gt; <a href="guide/">full setup guide</a></p>
 </section>
 
 <section id="suite">
