@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="760" viewBox="0 0 600 380" role="img" aria-labelledby="t d">
+  <title id="t">HELIOS: start here</title>
+  <desc id="d">HELIOS installs MINOS, STYX and ORPHEUS and sets up one shared library, collection.741. MINOS is the main app.</desc>
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#d21f26"/>
+    </marker>
+    <style>
+      text { font-family: "IBM Plex Mono", Menlo, Consolas, monospace; fill: #e6e1da }
+      .big { font-size: 22px; font-weight: 600; letter-spacing: 2px }
+      .mid { font-size: 15px; font-weight: 600; letter-spacing: 1.5px }
+      .small { font-size: 11px; fill: #9b8f86 }
+      .tag { font-size: 10px; fill: #d21f26; letter-spacing: 2px; font-weight: 600 }
+    </style>
+  </defs>
+  <rect width="600" height="380" fill="#040303"/>
+
+  <!-- HELIOS -->
+  <text x="300" y="24" text-anchor="middle" class="tag">◆ START HERE</text>
+  <rect x="150" y="34" width="300" height="70" fill="#0d0a0a" stroke="#d21f26" stroke-width="2"/>
+  <text x="300" y="66" text-anchor="middle" class="big">HELIOS</text>
+  <text x="300" y="88" text-anchor="middle" class="small">installs · updates · sets up your library</text>
+
+  <!-- arrows -->
+  <path d="M220 104 L175 152" stroke="#d21f26" stroke-width="2" fill="none" marker-end="url(#a)"/>
+  <path d="M380 104 L440 152" stroke="#d21f26" stroke-width="1.5" fill="none" marker-end="url(#a)"/>
+  <path d="M450 69 H594 V239 L583 239" stroke="#d21f26" stroke-width="1.5" fill="none" marker-end="url(#a)"/>
+
+  <!-- MINOS: the main app -->
+  <rect x="20" y="158" width="300" height="104" fill="#0d0a0a" stroke="#e6e1da" stroke-width="2"/>
+  <text x="38" y="182" class="tag">THE MAIN APP</text>
+  <text x="38" y="214" class="big">MINOS</text>
+  <text x="38" y="238" class="small">dj software · 4 decks · fx racks</text>
+  <text x="38" y="252" class="small">two browsers · tags · edits</text>
+
+  <!-- STYX, ORPHEUS -->
+  <rect x="340" y="158" width="240" height="46" fill="#0d0a0a" stroke="#2a1113" stroke-width="1.5"/>
+  <text x="356" y="186" class="mid">STYX</text>
+  <text x="420" y="186" class="small">digging</text>
+  <rect x="340" y="216" width="240" height="46" fill="#0d0a0a" stroke="#2a1113" stroke-width="1.5"/>
+  <text x="356" y="244" class="mid">ORPHEUS</text>
+  <text x="456" y="244" class="small">listening</text>
+
+  <!-- links to the library -->
+  <path d="M170 262 V306 M460 262 V306" stroke="#9b8f86" stroke-width="1.2" stroke-dasharray="3 4" fill="none"/>
+  <path d="M150 69 H10 V334 H20" stroke="#9b8f86" stroke-width="1.2" stroke-dasharray="3 4" fill="none"/>
+  <text x="16" y="140" class="small">sets up</text>
+
+  <!-- library -->
+  <rect x="20" y="306" width="560" height="56" fill="#1c1617" stroke="#2a1113" stroke-width="1.5"/>
+  <text x="300" y="330" text-anchor="middle" class="mid">collection.741</text>
+  <text x="300" y="350" text-anchor="middle" class="small">one library for all apps · cues · grids · tags · playlists · backups</text>
+</svg>

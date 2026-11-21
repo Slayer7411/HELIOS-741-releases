@@ -4,6 +4,10 @@
 
 installer, updater and library setup for the 741 tools. macos. start here: HELIOS installs and updates the rest.
 
+<p align="center"><img src="assets/flow.svg" alt="HELIOS installs MINOS, STYX and ORPHEUS and sets up one shared library, collection.741" width="100%"></p>
+
+<p align="center"><a href="https://slayer7411.github.io/MINOS-741-releases/"><img src="assets/minos.jpg" alt="MINOS: four decks, two browsers side by side" width="100%"></a><br><sub>MINOS, the main app: 4 decks, two browsers side by side, tags</sub></p>
+
 * download: [HELIOS](https://github.com/Slayer7411/HELIOS-741-releases/releases/download/latest-build/HELIOS-741.dmg) · [all releases](https://github.com/Slayer7411/HELIOS-741-releases/releases)
 * page: https://slayer7411.github.io/HELIOS-741-releases/
 * setup guide: [slayer7411.github.io/HELIOS-741-releases/guide](https://slayer7411.github.io/HELIOS-741-releases/guide/)
