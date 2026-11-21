@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HELIOS-741 guide</title>
+<meta name="description" content="HELIOS-741 setup guide: install, library, repair, updates.">
+<link rel="icon" href="data:,">
+<style>
+@font-face { font-family:"Cinzel"; src:url("../assets/fonts/Cinzel.ttf") format("truetype"); font-weight:400 900; font-display:swap }
+@font-face { font-family:"IBM Plex Mono"; src:url("../assets/fonts/IBMPlexMono-Regular.ttf") format("truetype"); font-weight:400; font-display:swap }
+@font-face { font-family:"IBM Plex Mono"; src:url("../assets/fonts/IBMPlexMono-SemiBold.ttf") format("truetype"); font-weight:600; font-display:swap }
+:root {
+  --void:#040303; --chitin:#0d0a0a; --bone:#e6e1da; --mute:#9b8f86; --low:#6f645c;
+  --red:#d21f26; --hair:#2a1113; --ash:#1c1617;
+  --mono:"IBM Plex Mono", ui-monospace, Menlo, monospace; --serif:"Cinzel", Georgia, serif;
+  color-scheme: dark;
+}
+* { box-sizing:border-box }
+body { margin:0; background:var(--void); color:var(--bone); font:14px/1.65 var(--mono) }
+a { color:var(--bone); text-decoration-color:var(--red); text-underline-offset:3px; overflow-wrap:anywhere }
+a:hover { color:var(--red) }
+code, pre { font:inherit; font-size:13px }
+pre { background:var(--chitin); border:1px solid var(--hair); padding:12px 14px; margin:8px 0 14px; overflow-x:auto; color:var(--bone) }
+code { color:var(--bone) }
+p, li { max-width:72ch; color:#cfc8bf }
+p { margin:0 0 10px }
+ul { margin:0 0 12px; padding-left:20px }
+li { margin:4px 0 }
+li::marker { color:var(--red) }
+
+main { max-width:760px; margin:0 auto; padding:24px max(18px, env(safe-area-inset-right, 0px)) 72px max(18px, env(safe-area-inset-left, 0px)) }
+.banner { margin:0 0 6px }
+.banner img { display:block; width:100%; height:auto; border:1px solid var(--hair) }
+.tagline { margin:14px 0 0; font-size:15px; color:var(--bone) }
+
+section { padding:26px 0; border-top:1px solid var(--ash) }
+h2 { font:600 18px/1.2 var(--serif); letter-spacing:.14em; margin:0 0 14px; display:flex; gap:12px; align-items:baseline }
+h2 i { color:var(--red); font:600 14px var(--mono); font-style:normal }
+h3 { font:600 12px var(--mono); letter-spacing:.12em; color:var(--mute); text-transform:uppercase; margin:18px 0 6px }
+.meta { color:var(--low); font-size:12.5px }
+
+.btn { display:inline-block; margin:4px 0 12px; padding:12px 20px; background:var(--chitin); border:1px solid var(--red); color:var(--bone);
+  font:600 14px var(--mono); letter-spacing:.06em; text-decoration:none; max-width:100%; overflow-wrap:anywhere }
+.btn:hover { background:var(--red); color:var(--bone) }
+
+.fig { margin:18px 0 0 }
+.fig img { display:block; width:100%; height:auto; border:1px solid var(--hair); background:#000 }
+figcaption { font-size:11px; color:var(--low); letter-spacing:.08em; margin:8px 0 0 }
+
+.links { list-style:none; padding:0; margin:0 }
+.links li { margin:6px 0; padding-left:0; max-width:none }
+.links li::marker { content:"" }
+.links span { color:var(--low); display:inline-block; min-width:110px }
+
+.legal { border:1px solid var(--hair); background:var(--chitin); padding:14px 16px; margin:0 0 14px; max-width:none; color:var(--bone) }
+.credits { font-size:12.5px; color:var(--mute) }
+
+footer { margin-top:30px; padding-top:14px; border-top:1px solid var(--ash); font-size:11px; color:var(--low); letter-spacing:.08em }
+
+@media (max-width: 520px) {
+  body { font-size:13px }
+  main { padding-top:16px }
+  h2 { font-size:16px }
+  .btn { display:block; text-align:center }
+  .links span { display:block; min-width:0 }
+}
+</style>
+<style>
+.title { font:700 clamp(34px, 9vw, 64px)/1 var(--serif); letter-spacing:.12em; margin:18px 0 0; color:var(--bone) }
+.title b { color:var(--red); font-weight:700 }
+.nav { display:flex; flex-wrap:wrap; gap:6px 18px; margin:14px 0 0; font-size:12.5px }
+.nav a { color:var(--mute) }
+.step { display:flex; gap:12px; margin:0 0 14px }
+.step > b { color:var(--red); font:600 13px var(--mono); min-width:22px }
+.step > div { flex:1; min-width:0 }
+.state { color:var(--low); font-size:12px; letter-spacing:.06em }
+</style>
+</head>
+<body>
+<main>
+
+<header>
+  <h1 class="title">HELIOS<b>-741</b></h1>
+  <p class="tagline">setup guide.</p>
+  <nav class="nav"><a href="../">home</a><a href="#install">install</a><a href="#library">library</a><a href="#repair">repair</a><a href="#updates">updates</a></nav>
+</header>
+
+<section id="install">
+  <h2><i>◆</i> 1 · INSTALL</h2>
+  <div class="step"><b>01</b><div><p>download <a href="https://github.com/Slayer7411/HELIOS-741-releases/releases/download/latest-build/HELIOS-741.dmg">HELIOS-741.dmg</a>, open it, drag HELIOS into Applications.</p></div></div>
+  <div class="step"><b>02</b><div><p>start HELIOS. if macos blocks it: system settings -&gt; privacy &amp; security -&gt; OPEN ANYWAY.</p></div></div>
+  <div class="step"><b>03</b><div><p>the setup assistant opens on the first start. it walks you through home, library and apps. you can run it again later from LIBRARY.</p></div></div>
+</section>
+
+<section id="home">
+  <h2><i>◆</i> 2 · CHOOSE A HOME</h2>
+  <p>the home is the folder that holds your library file, its backups and exports.</p>
+  <ul>
+    <li><b>google drive</b> (default <code>My Drive/741</code>): same library on every mac you sign in on</li>
+    <li><b>local folder</b>: anywhere on this mac</li>
+    <li><b>existing home</b>: already set up on another mac -&gt; pick it, HELIOS shows a summary before it adopts it</li>
+  </ul>
+</section>
+
+<section id="library">
+  <h2><i>◆</i> 3 · THE LIBRARY</h2>
+  <p>all 741 apps share one library file: <code>collection.741</code>. tracks, cues, grids, tags, playlists, sets and settings live in it. MINOS, STYX and ORPHEUS read and write the same file, so a cue you set in one app is there in the next.</p>
+  <h3>start with your existing collection</h3>
+  <ul>
+    <li><b>import</b>: reads an .nml or .xml collection (or an existing MINOS data folder) once</li>
+    <li>HELIOS shows a plan first: number of tracks and playlists, missing files, duplicates, warnings. nothing is written by the plan</li>
+    <li>you confirm, HELIOS writes the library and reads it back to check it. optional: it keeps a copy of the source under <code>imports/&lt;date&gt;/</code></li>
+  </ul>
+  <h3>your music files</h3>
+  <ul>
+    <li><b>adopt</b>: your music stays where it is, the library just points at it</li>
+    <li><b>move</b>: HELIOS moves it into one library folder. files are only removed from the old place after the copy is verified</li>
+  </ul>
+  <h3>backups and exports</h3>
+  <ul>
+    <li>backups run automatically: hourly, weekly, monthly, yearly</li>
+    <li>when you close, the library is exported back to the common formats (.nml / .xml) under <code>exports/</code>. nothing gets locked in</li>
+  </ul>
+  <h3>later</h3>
+  <p>LIBRARY in HELIOS: move, adopt, import, reset, run setup again. changes are refused while a deck is playing.</p>
+</section>
+
+<section id="repair">
+  <h2><i>◆</i> 4 · REPAIR</h2>
+  <ul>
+    <li>checks every track in the library: does the file exist, does it decode</li>
+    <li>moved files are found again and relinked, cues and grids stay</li>
+    <li>runs in the background too, never while you play</li>
+  </ul>
+</section>
+
+<section id="updates">
+  <h2><i>◆</i> 5 · APPS AND UPDATES</h2>
+  <ul>
+    <li>install MINOS, STYX and ORPHEUS from HELIOS, one click each</li>
+    <li>channel per app: <b>newest build</b> (default), <b>stable versions</b>, own folder, or off</li>
+    <li>every download is checked before install. the last 3 versions are kept for rollback</li>
+    <li>no update while an app plays: HELIOS asks you to quit, or installs on the next quit</li>
+    <li>HELIOS updates itself the same way</li>
+  </ul>
+</section>
+
+<section id="alone">
+  <h2><i>◆</i> WITHOUT HELIOS</h2>
+  <p>every app keeps its own updater and setup. MINOS alone: <code>brew install --cask slayer7411/tap/minos-741</code></p>
+</section>
+
+<section id="suite">
+  <h2><i>◆</i> THE 741 TOOLS</h2>
+  <ul class="links">
+    <li><span>HELIOS</span> <a href="https://slayer7411.github.io/HELIOS-741-releases/">installer, updater, library setup</a></li>
+    <li><span>MINOS</span> <a href="https://slayer7411.github.io/MINOS-741-releases/">dj software</a></li>
+    <li><span>STYX</span> <a href="https://slayer7411.github.io/STYX-741-releases/">digging</a></li>
+    <li><span>ORPHEUS</span> <a href="https://slayer7411.github.io/Orpheus-releases/">player for listening</a></li>
+  </ul>
+</section>
+
+<footer>made by 741 &middot; &copy; 2026 Slayer7411</footer>
+</main>
+</body>
+</html>
